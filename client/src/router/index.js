@@ -22,6 +22,31 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/movies',
+      name: 'movies',
+      component: () => import(/* webpackChunkName: "movies" */ '../components/MoviesView.vue')
+    },
+    {
+      path: '/movie/:id',
+      name: 'movie',
+      component: () => import(/* webpackChunkName: "movie" */ '../components/movies/MovieId.vue')
+    },
+    {
+      path: '/movie-edit/:id',
+      name: 'movie-edit',
+      component: () => import(/* webpackChunkName: "movie" */ '../components/movies/MovieEdit.vue')
+    },
+    {
+      path: '/movie-delete/:id',
+      name: 'movie-delete',
+      component: () => import(/* webpackChunkName: "movie" */ '../components/movies/MovieDelete.vue')
+    },
+    {
+      path: '/movie-create',
+      name: 'movie-create',
+      component: () => import(/* webpackChunkName: "movie" */ '../components/movies/MovieCreate.vue')
     }
   ]
 })
